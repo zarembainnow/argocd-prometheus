@@ -3,8 +3,8 @@ name: prometheus-stack
 description: A Helm chart for deploying kube-prometheus-stack via ArgoCD
 type: application
 version: 1.0.0
-appVersion: 45.0.0
+appVersion: 35.0.0
 dependencies:
 - name: kube-prometheus-stack
-  version: "45.0.0"
+  version: "35.0.0"
   repository: "https://prometheus-community.github.io/helm-charts"

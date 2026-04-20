@@ -1,6 +1,5 @@
 kube-prometheus-stack:
-  crds:
-    enabled: false
+  crds: false   # попробуем отключить
   prometheus:
     prometheusSpec:
       retention: 24h
