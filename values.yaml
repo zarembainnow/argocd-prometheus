@@ -1,10 +1,9 @@
-kube-prometheus-stack:
-  crds: false   # попробуем отключить
+prometheus:
   prometheus:
-    prometheusSpec:
-      retention: 24h
-  grafana:
-    enabled: true
-    adminPassword: admin
+    retention: 24h
   alertmanager:
-    enabled: false
+    enabled: true
+  nodeExporter:
+    enabled: true
+  kubeStateMetrics:
+    enabled: true
