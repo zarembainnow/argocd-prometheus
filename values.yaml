@@ -1,9 +1,11 @@
 prometheus:
   prometheus:
-    retention: 24h
-  alertmanager:
-    enabled: true
-  nodeExporter:
-    enabled: true
-  kubeStateMetrics:
-    enabled: true
+    deploymentStrategy:
+      type: Recreate
+    resources:
+      requests:
+        memory: 256Mi
+        cpu: 100m
+      limits:
+        memory: 512Mi
+        cpu: 200m
