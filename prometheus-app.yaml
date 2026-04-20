@@ -6,14 +6,22 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/zarembainnow/argocd-prometheus.git'
-    path: .
-    targetRevision: main
+    repoURL: https://prometheus-community.github.io/helm-charts
+    chart: prometheus
+    targetRevision: 15.1.0
     helm:
-      valueFiles:
-        - values.yaml
+      values: |
+        prometheus:
+          prometheus:
+            retention: 24h
+        alertmanager:
+          enabled: true
+        nodeExporter:
+          enabled: true
+        kubeStateMetrics:
+          enabled: true
   destination:
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
     namespace: monitoring
   syncPolicy:
     automated:
